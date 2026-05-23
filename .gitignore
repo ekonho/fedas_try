@@ -1,0 +1,27 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境
+venv/
+.env
+
+# 数据集和运行结果
+dataset/*/rawdata/
+dataset/*/train/
+dataset/*/test/
+dataset/*/*.json
+*.tar.gz
+*.zip
+*.npz
+results/
+*.h5
+*.out
+
+# PyTorch 模型和日志
+models/
+items/
+*.pt
+*.pth
+log/
