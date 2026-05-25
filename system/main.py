@@ -153,9 +153,7 @@ if __name__ == "__main__":
     parser.add_argument('-m', "--model", type=str, default="resnet")
 
     parser.add_argument('-lbs', "--batch_size", type=int, default=64)
-=======
-    parser.add_argument('-lbs', "--batch_size", type=int, default=128)
->>>>>>> 687a633a3a336a2417c08fc9458c6a5d941a4a91
+
     parser.add_argument('-lr', "--local_learning_rate", type=float, default=0.01,
                         help="Local learning rate")
     parser.add_argument('-ld', "--learning_rate_decay", type=bool, default=True)
