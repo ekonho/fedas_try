@@ -158,7 +158,7 @@ if __name__ == "__main__":
                         help="Local learning rate")
     parser.add_argument('-ld', "--learning_rate_decay", type=bool, default=True)
     parser.add_argument('-ldg', "--learning_rate_decay_gamma", type=float, default=0.998)
-<<<<<<< HEAD
+
     parser.add_argument('-gr', "--global_rounds", type=int, default=40)
 =======
     parser.add_argument('-gr', "--global_rounds", type=int, default=60)
