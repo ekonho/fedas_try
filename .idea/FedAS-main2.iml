@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
   <component name="PyDocumentationSettings">
+<<<<<<< HEAD
     <option name="format" value="PLAIN" />
     <option name="myDocStringFormat" value="Plain" />
+=======
+    <option name="format" value="GOOGLE" />
+    <option name="myDocStringFormat" value="Google" />
+>>>>>>> 687a633a3a336a2417c08fc9458c6a5d941a4a91
   </component>
 </module>

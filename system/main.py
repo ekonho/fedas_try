@@ -151,12 +151,20 @@ if __name__ == "__main__":
     parser.add_argument('-data', "--dataset", type=str, default="Cifar100")
     parser.add_argument('-nb', "--num_classes", type=int, default=100)
     parser.add_argument('-m', "--model", type=str, default="resnet")
+
     parser.add_argument('-lbs', "--batch_size", type=int, default=64)
+=======
+    parser.add_argument('-lbs', "--batch_size", type=int, default=128)
+>>>>>>> 687a633a3a336a2417c08fc9458c6a5d941a4a91
     parser.add_argument('-lr', "--local_learning_rate", type=float, default=0.01,
                         help="Local learning rate")
     parser.add_argument('-ld', "--learning_rate_decay", type=bool, default=True)
     parser.add_argument('-ldg', "--learning_rate_decay_gamma", type=float, default=0.998)
+<<<<<<< HEAD
     parser.add_argument('-gr', "--global_rounds", type=int, default=40)
+=======
+    parser.add_argument('-gr', "--global_rounds", type=int, default=60)
+>>>>>>> 687a633a3a336a2417c08fc9458c6a5d941a4a91
     parser.add_argument('-ls', "--local_epochs", type=int, default=5,
                         help="Multiple update steps in one local epoch.")
     parser.add_argument('-algo', "--algorithm", type=str, default="FedAS")
