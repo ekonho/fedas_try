@@ -49,18 +49,9 @@ class FedAS(Server):
             param.data.zero_()
 
         # calculate the aggregrate weight with respect to the FIM value of model
-        FIM_weight_list = []
-        for id in self.uploaded_ids:
-            val = self.clients[id].fim_trace_history[-1]
-            if not np.isfinite(val) or val <= 0:
-                val = 1.0
-            FIM_weight_list.append(val)
+        FIM_weight_list = [self.clients[id].fim_trace_history[-1] for id in self.uploaded_ids]
         # normalization to obtain weight
-        total = sum(FIM_weight_list)
-        if total > 0:
-            FIM_weight_list = [FIM_value / total for FIM_value in FIM_weight_list]
-        else:
-            FIM_weight_list = [1.0 / len(FIM_weight_list)] * len(FIM_weight_list)
+        FIM_weight_list = [FIM_value / sum(FIM_weight_list) for FIM_value in FIM_weight_list]
 
         for w, client_model in zip(FIM_weight_list, self.uploaded_models):
             self.add_parameters(w, client_model)

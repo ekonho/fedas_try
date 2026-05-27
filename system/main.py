@@ -80,11 +80,11 @@ def run(args):
         elif model_str == "resnet":
             # args.model = torchvision.models.resnet18(pretrained=False, num_classes=args.num_classes).to(args.device)
             
-            args.model = torchvision.models.resnet18(pretrained=True).to(args.device)
-            feature_dim = list(args.model.fc.parameters())[0].shape[1]
-            args.model.fc = nn.Linear(feature_dim, args.num_classes).to(args.device)
+            # args.model = torchvision.models.resnet18(pretrained=True).to(args.device)
+            # feature_dim = list(args.model.fc.parameters())[0].shape[1]
+            # args.model.fc = nn.Linear(feature_dim, args.num_classes).to(args.device)
             
-            # args.model = resnet18(num_classes=args.num_classes, has_bn=True, bn_block_num=4).to(args.device)
+            args.model = resnet18(num_classes=args.num_classes, has_bn=True, bn_block_num=4).to(args.device)
 
         else:
             raise NotImplementedError

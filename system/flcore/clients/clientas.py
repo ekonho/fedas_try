@@ -115,12 +115,9 @@ class clientAS(Client):
 
                 # Compute and accumulate the trace of the Fisher Information Matrix
                 for g in grads:
-                    if g is not None and not torch.isnan(g).any():
-                        fim_trace_sum += torch.sum(g ** 2).detach()
+                    fim_trace_sum += torch.sum(g ** 2).detach()
 
             # add the fisher log
-            if torch.isnan(torch.tensor(fim_trace_sum)) or fim_trace_sum == 0:
-                fim_trace_sum = torch.tensor(1.0)
             self.fim_trace_history.append(fim_trace_sum.item())
 
             # Evaluate on the client's test dataset
@@ -150,12 +147,9 @@ class clientAS(Client):
 
                 # Compute and accumulate the trace of the Fisher Information Matrix
                 for g in grads:
-                    if g is not None and not torch.isnan(g).any():
-                        fim_trace_sum += torch.sum(g ** 2).detach()
+                    fim_trace_sum += torch.sum(g ** 2).detach()
 
             # add the fisher log
-            if torch.isnan(torch.tensor(fim_trace_sum)) or fim_trace_sum == 0:
-                fim_trace_sum = torch.tensor(1.0)
             self.fim_trace_history.append(fim_trace_sum.item())
 
             # Evaluate on the client's test dataset
@@ -178,6 +172,7 @@ class clientAS(Client):
                 correct += predicted.eq(y).sum().item()
         accuracy = 100. * correct / total
         return accuracy
+
     
     # def set_parameters(self, model, progress):
         # # Substitute the parameters of the base, enabling personalization
